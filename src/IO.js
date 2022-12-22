@@ -1,4 +1,4 @@
-const SERVER_ADDR = "https://chat.see5.net/"
+const SERVER_ADDR = "https://chat.see5.net/";
 const LISTEN_ADDR = "/api/socket.io/"
 
 import {io} from "socket.io-client";
@@ -11,10 +11,11 @@ export default class IO {
     static firstMessage = false;
 
     static connectIO() {
-        this.socket = io( SERVER_ADDR /*"http://192.168.250.204:5000"*/ , {
-            path: LISTEN_ADDR /*"/api/socket.io"*/ ,
+        const location = window.location.host == "localhost:5000" ? "newsvit.ir" : window.location.hostname ;
+        this.socket = io( SERVER_ADDR  , {
+            path: LISTEN_ADDR ,
             query: {
-                domain: window.location.host /* "see5.net" */,
+                domain: location,
                 clientId: this.getClientId(),
             }
         });
@@ -60,18 +61,28 @@ export default class IO {
                 SpadTemplate.operatorDetection( "https://files.see5.net/support/default/operatorAvatar.jpeg", SpadTemplate.basicData.title);
                 this.firstMessage = false;
             }
+            SpadTemplate.setOffsetOnOperatorMessage();
+           
         })
 
         this.socket.on("connect_error" , ()=>{
 
         })
-
         this.socket.on("widgetSetting" , (data) =>{
+            console.log(data);
             SpadTemplate.basicData = data.widgetSetting;
-            SpadTemplate.createChat().then(()=> {
-                console.log(SpadTemplate.basicData);
-                IO.createdTemplate = true;
-            });
+
+            if(SpadTemplate.basicData.startForm.status){
+                SpadTemplate.allowToChat = false;
+            }
+            if(IO.createdTemplate == false){
+                SpadTemplate.createChat().then(()=> {
+                    IO.createdTemplate = true;
+                }).then(()=>{
+                    IO.syncData();
+                    SpadTemplate.setOffsetToLastMessage();
+                });
+            }
          });
     }
 
@@ -79,12 +90,13 @@ export default class IO {
         this.socket.emit("newMessage", data);
     }
     static syncData(){
-        this.socket.emit("syncData" , true);
+        this.socket.emit("customSyncData", 'data');
     }
     static sendMetaData(data) {
         this.socket.emit("newMetaData", data);
     }
-
-
+    static sendFormData(data){
+        this.socket.emit("newFormData" , data);
+    }
 }
 

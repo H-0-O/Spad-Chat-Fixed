@@ -1,46 +1,109 @@
 <div id="spadChat">
-    <div id="chat_container">
-        <div id="chat_box">
-            <div id="header_chat_box">
-                <div id="header_box_icon">
-                    <span class="icon"><img src="data:image/png;base64,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"></span>
-                    <span class="text">چت</span>
-                </div>
-                <div id="chat_logos_container">
-                    <div id="chat_logos">
-
-                    </div>
-                </div>
-                <div id="chat_title">
-                    <div class="title-name"></div>
-                    <div class="title-description"> این دیسکریچشن است</div>
-                </div>
-            </div>
-            <div id="chat_body">
-
-            </div>
-            <div id="chat_footer">
-                <div id="send_message_box">
-                    <div class="text_area_container">
-                        <textarea id="messageInputText" maxlength="2000" placeholder="پیامی بفرستید"></textarea>
-                    </div>
-                    <div id="send_icon">
-                        <!-- <img id="send_ms_icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABnklEQVRoge2YTS4EQRiGnx6zxR0ksyAjESewERs24gaOwcJWcIQRVnYcwtrGToiF4AISRNAWoyalVFVXd1dPTSffk3xJ/6Xr/b7qfusHBEEQBEEopANsAZfAF/AM7ALdlKJCUMKvgdwSR+mk+SkSruIdmE2k0UoGbABX+IXr0U+i1KCKcNUD0wn0jgj9VFwxGL/kIVUrrscn0KsrpKyNZcA6sAcs12z7FLjVzteApd/jF+AEeK3ZxogYFfdVfxH4Np45DBFW1AMxK65jVj+3PGO79o/Mc70J4TAcief5mwDAKrACTAGPDH/wt7Ivz6jnKkmdpwtcNCg8Bz6AudiiFQvADbAfswGDO+DecU93IUV0N2oKmwsFuVGncWlh+BzH60a6C/WAzShy3DwAZ457ugspSrlRFzinZT+xSetsdJIGMpsLKSq7Uew5kKsXfC5Uam40rkTMyVw/IIEDl7CyicT6tI6Bbe3c5kKKynMjFxOzoKlLa5eUJq1d1Ju0dlvFpMzG1kwijUEUJVLL28eJubn7BOzQgs1dQRAEQWiUHwHOdfgsUP/RAAAAAElFTkSuQmCC">-->
-                        <?xml version="1.0" ?><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/></g></svg>
-                    </div>
-                </div>
-            </div>
-            <div id="close_chat" >
-                <div>
-                    <!--                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px"-->
-                    <!--                         id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"-->
-                    <!--                         width="512px" xml:space="preserve"><g><path d="M256,33C132.3,33,32,133.3,32,257c0,123.7,100.3,224,224,224c123.7,0,224-100.3,224-224C480,133.3,379.7,33,256,33z    M364.3,332.5c1.5,1.5,2.3,3.5,2.3,5.6c0,2.1-0.8,4.2-2.3,5.6l-21.6,21.7c-1.6,1.6-3.6,2.3-5.6,2.3c-2,0-4.1-0.8-5.6-2.3L256,289.8   l-75.4,75.7c-1.5,1.6-3.6,2.3-5.6,2.3c-2,0-4.1-0.8-5.6-2.3l-21.6-21.7c-1.5-1.5-2.3-3.5-2.3-5.6c0-2.1,0.8-4.2,2.3-5.6l75.7-76   l-75.9-75c-3.1-3.1-3.1-8.2,0-11.3l21.6-21.7c1.5-1.5,3.5-2.3,5.6-2.3c2.1,0,4.1,0.8,5.6,2.3l75.7,74.7l75.7-74.7   c1.5-1.5,3.5-2.3,5.6-2.3c2.1,0,4.1,0.8,5.6,2.3l21.6,21.7c3.1,3.1,3.1,8.2,0,11.3l-75.9,75L364.3,332.5z"/></g></svg>-->
-                    <?xml version="1.0" ?><svg data-name="Layer 1" height="200" id="Layer_1" viewBox="0 0 200 200" width="200" xmlns="http://www.w3.org/2000/svg"><title/><path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z"/></svg>
-                </div>
-            </div>
+  <div id="chat_container">
+    <div id="chat_box">
+      <div id="header_chat_box">
+        <div id="header_box_icon">
+          <span class="icon"
+            ><img
+              src="data:image/png;base64,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"
+          /></span>
+          <span class="text">چت</span>
         </div>
+        <div id="chat_logos_container">
+          <div id="chat_logos"></div>
+        </div>
+        <div id="chat_title">
+          <div class="title-name"></div>
+          <div class="title-description">این دیسکریچشن است</div>
+        </div>
+      </div>
+      <div id="chat_body"></div>
+      <div id="chat_footer">
+        <div id="send_message_box">
+          <div id="emojiIcon" class="iconFilter">
+            <div data-emj-code="1f600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                <circle fill="#FFCC4D" cx="18" cy="18" r="18"></circle>
+                <path
+                  fill="#664500"
+                  d="M18 21c-3.623 0-6.027-.422-9-1-.679-.131-2 0-2 2 0 4 4.595 9 11 9 6.404 0 11-5 11-9 0-2-1.321-2.132-2-2-2.973.578-5.377 1-9 1z"
+                ></path>
+                <path
+                  fill="#FFF"
+                  d="M9 22s3 1 9 1 9-1 9-1-2 4-9 4-9-4-9-4z"
+                ></path>
+                <ellipse
+                  fill="#664500"
+                  cx="12"
+                  cy="13.5"
+                  rx="2.5"
+                  ry="3.5"
+                ></ellipse>
+                <ellipse
+                  fill="#664500"
+                  cx="24"
+                  cy="13.5"
+                  rx="2.5"
+                  ry="3.5"
+                ></ellipse>
+              </svg>
+            </div>
+          </div>
+          <div class="text_area_container">
+            <textarea id="messageInputText" placeholder="پیامی بفرستید"  maxlength="2000" ></textarea>
+          </div>
+          <span id="send_icon">
+            <!-- <img id="send_ms_icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABnklEQVRoge2YTS4EQRiGnx6zxR0ksyAjESewERs24gaOwcJWcIQRVnYcwtrGToiF4AISRNAWoyalVFVXd1dPTSffk3xJ/6Xr/b7qfusHBEEQBEEopANsAZfAF/AM7ALdlKJCUMKvgdwSR+mk+SkSruIdmE2k0UoGbABX+IXr0U+i1KCKcNUD0wn0jgj9VFwxGL/kIVUrrscn0KsrpKyNZcA6sAcs12z7FLjVzteApd/jF+AEeK3ZxogYFfdVfxH4Np45DBFW1AMxK65jVj+3PGO79o/Mc70J4TAcief5mwDAKrACTAGPDH/wt7Ivz6jnKkmdpwtcNCg8Bz6AudiiFQvADbAfswGDO+DecU93IUV0N2oKmwsFuVGncWlh+BzH60a6C/WAzShy3DwAZ457ugspSrlRFzinZT+xSetsdJIGMpsLKSq7Uew5kKsXfC5Uam40rkTMyVw/IIEDl7CyicT6tI6Bbe3c5kKKynMjFxOzoKlLa5eUJq1d1Ju0dlvFpMzG1kwijUEUJVLL28eJubn7BOzQgs1dQRAEQWiUHwHOdfgsUP/RAAAAAElFTkSuQmCC">-->
+            <span>
+              <?xml version="1.0" ?><svg
+                style="enable-background: new 0 0 24 24"
+                version="1.1"
+                viewBox="0 0 24 24"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g id="info" />
+                <g id="icons">
+                  <path
+                    d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z"
+                    id="send"
+                  />
+                </g>
+              </svg>
+            </span>
+
+          </span>
+        </div>
+
+        <div id="powered_by">
+          powered By <a href="https://see5.net/" target="_blank">See5</a>
+        </div>
+
+      </div>
+      <div id="close_chat">
+        <div>
+          <!--                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px"-->
+          <!--                         id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"-->
+          <!--                         width="512px" xml:space="preserve"><g><path d="M256,33C132.3,33,32,133.3,32,257c0,123.7,100.3,224,224,224c123.7,0,224-100.3,224-224C480,133.3,379.7,33,256,33z    M364.3,332.5c1.5,1.5,2.3,3.5,2.3,5.6c0,2.1-0.8,4.2-2.3,5.6l-21.6,21.7c-1.6,1.6-3.6,2.3-5.6,2.3c-2,0-4.1-0.8-5.6-2.3L256,289.8   l-75.4,75.7c-1.5,1.6-3.6,2.3-5.6,2.3c-2,0-4.1-0.8-5.6-2.3l-21.6-21.7c-1.5-1.5-2.3-3.5-2.3-5.6c0-2.1,0.8-4.2,2.3-5.6l75.7-76   l-75.9-75c-3.1-3.1-3.1-8.2,0-11.3l21.6-21.7c1.5-1.5,3.5-2.3,5.6-2.3c2.1,0,4.1,0.8,5.6,2.3l75.7,74.7l75.7-74.7   c1.5-1.5,3.5-2.3,5.6-2.3c2.1,0,4.1,0.8,5.6,2.3l21.6,21.7c3.1,3.1,3.1,8.2,0,11.3l-75.9,75L364.3,332.5z"/></g></svg>-->
+          <?xml version="1.0" ?><svg
+            data-name="Layer 1"
+            height="200"
+            id="Layer_1"
+            viewBox="0 0 200 200"
+            width="200"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title />
+            <path
+              d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
-    <div id="chat_icon" class="show_icon">
-        <img alt="">
-    </div>
+  </div>
+  <div id="chat_icon" class="show_icon">
+    <img alt="" />
+  </div>
 </div>
